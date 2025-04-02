@@ -12,21 +12,46 @@
     <nav class="navbar">
       <div class="logo">FI Navigator</div>
       <ul class="nav-links">
-        <li><a href="#home" class="active">Home</a></li>
-        <li><a href="#features">Features</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#contact">Contact</a></li>
+        <li><a href="#home" class="nav-link active">Home</a></li>
+        <li><a href="#features" class="nav-link">Features</a></li>
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
       </ul>
+      <div class="auth-section">
+        <button id="loginBtn" class="btn">Login</button>
+        <button id="logoutBtn" class="btn hidden">Logout</button>
+      </div>
     </nav>
   </header>
 
-  <main id="home">
-    <section class="hero">
+  <main>
+    <!-- Hero Section -->
+    <section id="home" class="hero">
       <h1>Welcome to FI Navigator Health Check</h1>
       <p>Your one-stop platform for comprehensive health insights.</p>
-      <a href="#features" class="cta-button">Learn More</a>
+      <button id="exploreBtn" class="cta-button">Explore Dashboard</button>
     </section>
 
+    <!-- Dashboard Section (hidden until login) -->
+    <section id="dashboard" class="dashboard hidden">
+      <h2>Dashboard</h2>
+      <div class="dashboard-components">
+        <div class="component">
+          <h3>Health Overview</h3>
+          <p>Display metrics, charts, and key insights here.</p>
+        </div>
+        <div class="component">
+          <h3>Recent Trends</h3>
+          <p>Visualize recent health trends and performance over time.</p>
+        </div>
+        <div class="component">
+          <h3>Data Summary</h3>
+          <p>Access comprehensive reports and data summaries at a glance.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features Section -->
     <section id="features" class="features">
       <h2>Features</h2>
       <div class="feature-items">
@@ -45,11 +70,15 @@
       </div>
     </section>
 
+    <!-- About Section -->
     <section id="about" class="about">
       <h2>About FI Navigator</h2>
-      <p>FI Navigator is dedicated to providing reliable and intuitive health checks using modern technology and user-centered design principles.</p>
+      <p>
+        FI Navigator is dedicated to providing reliable and intuitive health checks using modern technology and user-centered design principles.
+      </p>
     </section>
 
+    <!-- Contact Section -->
     <section id="contact" class="contact">
       <h2>Contact Us</h2>
       <form id="contactForm">
@@ -62,7 +91,7 @@
         <label for="message">Message:</label>
         <textarea id="message" name="message" placeholder="Your Message" required></textarea>
         
-        <button type="submit">Send Message</button>
+        <button type="submit" class="btn">Send Message</button>
       </form>
     </section>
   </main>
@@ -70,6 +99,23 @@
   <footer>
     <p>&copy; 2025 FI Navigator. All Rights Reserved.</p>
   </footer>
+
+  <!-- Modal for Login -->
+  <div id="loginModal" class="modal hidden">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2>Login</h2>
+      <form id="loginForm">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" placeholder="Enter username" required />
+        
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" placeholder="Enter password" required />
+        
+        <button type="submit" class="btn">Login</button>
+      </form>
+    </div>
+  </div>
 
   <script src="script.js"></script>
 </body>
